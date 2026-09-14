@@ -1,0 +1,219 @@
+@charset "utf-8";
+
+.content {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.content .container {}
+
+.content .content-module {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  gap: 20px;
+  width: 100%;
+  aspect-ratio: 12/8.6;
+}
+
+/* 공통 */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 22px 25px;
+  overflow: hidden;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+h3 .icon-about {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: url(../images/icon-list.svg) no-repeat center/cover;
+}
+
+.date {
+  font-size: 14px;
+  font-weight: 300;
+  color: #ccc;
+  line-height: 1.4;
+  min-width: 85px;
+}
+.about-desc {
+  font-size: 14px;
+  color: #eee;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+/* profile-photo */
+.profile-photo {
+  grid-column: 1/5;
+  grid-row: 1/7;
+  padding: 0;
+  background-image: url(../images/about-me.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* profile-info */
+.profile-info {
+  grid-column: 1/5;
+  grid-row: 7/10;
+  padding: 35px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.profile-info .name-box {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.profile-info .name-box h2 {
+  font-size: 32px;
+  letter-spacing: 0.2px;
+  font-weight: 600;
+}
+.profile-info .name-box span {
+  font-size: 17px;
+  letter-spacing: 0.2px;
+}
+.profile-info .info-list {}
+.profile-info .info-list li {
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  font-weight: 300;
+  margin-top: 6px;
+}
+
+/* mind */
+.mind {
+  grid-column: 5/16;
+  grid-row: 1/3;
+}
+.mind .mind-wrap {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+}
+.mind .mind-wrap .item {
+  flex: 1;
+}
+
+.mind strong {
+  font-size: 16px;
+  color: #4ab9e9;
+}
+.mind p {
+  font-size: 14px;
+  font-weight: 200;
+  color: #ccc;
+  line-height: 1.4;
+  word-break: keep-all;
+  margin-top: 5px;
+}
+
+/* education */
+.education {
+  grid-column: 5/11;
+  grid-row: 3/6;
+}
+.education ul {}
+.education ul li {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 12px;
+}
+.education ul li span {}
+.education ul li .date {
+  width: 85px;
+  white-space: nowrap;
+}
+
+/* deco */
+.deco {
+  grid-column: 5/11;
+  grid-row: 6/7;
+  padding: 0;
+  background: linear-gradient(120deg, #4E66FF, #2ea5d8, #5bc8cf, #4d8ae0);
+  background-size: 300% 300%;
+  animation: auroraWave 7s ease infinite;
+}
+
+@keyframes auroraWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* license */
+.license {
+  grid-column: 11/16;
+  grid-row: 3/5;
+}
+.license ul {}
+.license ul li {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 12px;
+}
+.license ul li span {}
+
+/* experience */
+.experience {
+  grid-column: 11/16;
+  grid-row: 5/7;
+}
+.experience ul {}
+.experience ul li {
+  display: flex;
+  gap: 25px;
+}
+.experience ul li span {}
+
+/* skills */
+.skills {
+  grid-column: 5/16;
+  grid-row: 7/10;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.skills h3 {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+.skills .progress-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px 0;
+}
+.skills .progress-area .progress {
+  flex-basis: 48%;
+  position: relative;
+}
+.skills .progress-area .progress > svg {
+  height: 12px !important;
+  margin-top: 5px;
+}
+.skills .progress-area .progress p {
+  font-size: 14px;
+  font-weight: 300;
+  color: #eee;
+}

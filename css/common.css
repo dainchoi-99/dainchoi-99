@@ -1,0 +1,243 @@
+@charset "utf-8";
+@import url(font.css);
+
+/* ====== 초기화 ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+img {
+  vertical-align: middle;
+}
+body {
+  /* background-color: #1E1E1E; */
+  /* background:
+   linear-gradient(
+    #6803ac 0%,
+    #3f49ce 50%,
+    #052aca 100%
+   ); */
+  color: #fff;
+  font-family: 'Pretendard', sans-serif;
+  background: linear-gradient(
+    135deg,
+    #720880,
+    #9b58f1,
+    #658de2,
+    #1c43c4 
+  );
+
+  background-size: 200% 200%;
+
+  animation: gradientMove 18s ease-in-out infinite;
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ====== 공통클래스 ====== */
+#wrap {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ====== mobile ====== */
+.mb-only {
+  display: none;
+}
+.mobile-header {
+  display: none;
+}
+.mobile-menu-overlay {
+  display: none;
+}
+
+/* ====== header 영역 ======*/
+.header.pc-only {
+  width: 15%;
+  padding: 60px 35px;
+}
+.header.pc-only .header-wrap {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* logo */
+.pc-only .logo {
+  margin-bottom: 60px;
+}
+.pc-only .logo a {
+  display: inline-block;
+}
+.pc-only .logo a svg {
+  width: 75px;
+}
+.pc-only .logo a svg path {
+  fill: #40A8D3;
+}
+
+/* nav */
+.pc-only nav {}
+.pc-only nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.pc-only nav ul li {}
+.pc-only nav ul li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.pc-only nav ul li a i {
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: all 0.3s;
+}
+/* Web/App 아이콘 */
+.pc-only .icon-web-app {
+  background-image: url('../images/icon-web.svg');
+}
+.pc-only nav ul li a .icon-web-app.active {
+  background-image: url('../images/icon-web-fill.svg');
+}
+
+/* Design 아이콘 */
+.pc-only .icon-design-works {
+  background-image: url('../images/icon-design.svg');
+}
+.pc-only nav ul li a .icon-design-works.active {
+  background-image: url('../images/icon-design-fill.svg');
+}
+
+/* About 아이콘 */
+.pc-only .icon-about {
+  background-image: url('../images/icon-about.svg');
+}
+.pc-only nav ul li a .icon-about.active {
+  background-image: url('../images/icon-about-fill.svg');
+}
+
+
+
+.pc-only nav ul li a span {}
+
+/* contact */
+.pc-only .contact-area {
+  margin-top: auto;
+}
+
+.pc-only .contact-area .contact-info {
+  display: none;
+}
+.pc-only .contact-area .contact-info p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #979797;
+}
+
+.pc-only .contact-area .contact {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.pc-only .contact-area .contact i {
+  display: block;
+}
+.pc-only .contact-area .contact .icon-contact {
+  width: 20px;
+  height: 20px;
+  background-image: url(../images/icon-contact.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: all 0.3s;
+}
+.pc-only .contact-area.active .contact .icon-contact {
+  background-image: url(../images/icon-contact-fill.svg);
+}
+.pc-only .contact-area .contact .arrow {
+  width: 20px;
+  height: 20px;
+  color: #C9C9C9;
+  background-image: url(../images/arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-top: 3px;
+  margin-left: 5px;
+  transition: all 0.3s;
+}
+.pc-only .contact-area .contact:hover .arrow {
+  transform: rotate(180deg);
+}
+.pc-only .contact-area.active .contact .arrow {
+  transform: rotate(180deg);
+}
+
+.pc-only .contact-area .contact span {
+  font-size: 16px;
+  font-weight: 300;
+  color: #C9C9C9;
+  margin-left: 7px;
+}
+
+/* ====== content 영역 ======*/
+.content {
+  flex: 1;
+}
+
+/* ====== footer 영역 ======*/
+.footer {
+  position: relative;
+  width: 10%;
+  height: 100vh;
+}
+.footer p {
+  position: absolute;
+  top: 50%;
+  right: -50px;
+  transform: translateY(-50%) rotate(90deg);
+
+  color: rgba(255,255,255,0.7);
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  transform: rotate(90deg);
+  white-space: nowrap;
+}
+
+/* ====== modal 영역 ======*/

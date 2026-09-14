@@ -1,0 +1,321 @@
+@charset "utf-8";
+
+.content {
+  min-height: 100vh;
+  padding: 60px 0;
+}
+.content .container {}
+
+/* 탭버튼 */
+.filter-wrap {
+  margin-bottom: 22px;
+  display: flex;
+  gap: 10px;
+}
+.filter-btn {
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #D9D9D9;
+  border-radius: 30px;
+  color: #ccc;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.filter-btn.mixitup-control-active {
+  background: #2659FF;
+  color: #fff;
+  border: none;
+}
+
+/* 리스트 */
+.works-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+.works-list .mix {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.works-list .mix:hover {
+  box-shadow: 0 0px 40px rgba(78, 127, 231, 0.9);
+  transform: translateY(-3px);
+}
+
+/* 썸네일 */
+.works-list .mix .thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2.1 / 1;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: 0.3s ease;
+}
+/* --- 이미지 썸네일 확대 --- */
+.works-list .mix .thumb::before {
+  content: '';
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  filter: blur(1.2px) grayscale(100%) brightness(0.6);
+  transform: scale(1);
+  background-image: inherit; 
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: transform 0.5s ease, filter 0.3s ease;
+  z-index: 0;
+}
+.works-list .mix:hover .thumb::before {
+  transform: scale(1.04);
+  filter: blur(0px) grayscale(0%) brightness(1);
+}
+
+.works-list .mix .thumb .tag-wrap {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  display: flex;
+  gap: 5px;
+  z-index: 2;
+}
+.works-list .mix .thumb .tag {
+  background-color: #2659FF;
+  color: #eee;
+  font-size: 12px;
+  padding: 5px 8px;
+}
+.works-list .mix .thumb h3 {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  font-size: 25px;
+  font-weight: 700;
+  z-index: 2;
+}
+
+/* --- 썸네일 그라디언트 --- */
+.works-list .mix .thumb::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, rgba(33, 35, 46, 0.9), transparent);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* 설명 */
+.works-list .mix .work-info {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 12px;
+}
+.works-list .mix .work-info .desc {
+  font-size: 14px;
+  font-weight: 300;
+  color: #eee;
+  line-height: 1.3;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.works-list .mix .work-info .meta {
+}
+.works-list .mix .work-info .meta li {
+  font-size: 12px;
+  font-weight: 300;
+  color: #eee;
+  display: flex;
+  line-height: 1.3;
+}
+.works-list .mix .work-info .meta li span {}
+.works-list .mix .work-info .meta li .label {
+  display: inline-block;
+  width: 4.5em;
+  text-align: justify;
+  text-align-last: justify;
+  word-break: keep-all;
+  margin-right: 3px;
+  position: relative;
+  color: #ccc;
+}
+.works-list .mix .work-info .meta li .label::after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  position: absolute;
+}
+
+/* 버튼 */
+.works-list .mix .btn-wrap {}
+.works-list .mix .btn-wrap ul {
+  display: flex;
+  gap: 6px;
+}
+.works-list .mix .btn-wrap ul li {
+  flex: 1;
+}
+.works-list .mix .btn-wrap ul li a {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ccc;
+  transition: all 0.3s;
+}
+.works-list .mix .btn-wrap ul li a:hover {
+  background: #2659FF;
+  color: #fff;
+  border-color: #2659FF;
+}
+
+/* ====== Wep/App Process Modal ====== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 30, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+}
+.web-modal-wrap {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 70px 100px 0 100px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 70px;
+}
+
+/* 타이틀 */
+.modal-title {
+  width: 100%;
+  color: #fff;
+}
+
+.label-badge {
+  display: inline-block;
+  background: #2659FF;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 5px 10px;
+  align-self: flex-start;
+  margin-bottom: 25px;
+}
+
+.title-area .sub-title {
+  font-size: 30px;
+  color: #eee;
+  margin-bottom: 2px;
+}
+.title-area .main-title {
+  font-size: 42px;
+  font-weight: 700;
+}
+.title-area .desc {
+  margin-top: 15px;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #eee;
+  font-weight: 300;
+}
+
+/* 이미지 */
+.modal-image {
+  width: 100%;
+  padding-bottom: 70px;
+}
+
+.modal-image img {
+  width: 100%;
+  display: block;
+}
+
+/* 스크롤바 스타일 수정 */
+.web-modal-wrap::-webkit-scrollbar { width: 10px; }
+.web-modal-wrap::-webkit-scrollbar-track { background: transparent; }
+.web-modal-wrap::-webkit-scrollbar-thumb {
+  background-color: #2659FF;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* 닫기 버튼 */
+.btn-close-web {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background: #2659FF;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s;
+}
+.btn-close-web:hover {
+  transform: rotate(90deg);
+}
+
+/* go-top 버튼 */
+.btn-go-top {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background: #2659ff6e;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 20;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn-go-top:hover {
+  background: #2659FF;
+  transform: translateY(-3px);
+}

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 최다인 포트폴리오</title>
+  <!-- COMMON CSS -->
+  <link rel="stylesheet" href="css/common.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/about.css">
+  <!-- RESPONSIVE CSS -->
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- PROGRESSBAR JS -->
+  <script src="js/progressbar.min.js"></script>
+  <!-- COMMON JS -->
+  <script src="js/common.js"></script>
+  <!-- JS -->
+  <script src="js/about.js"></script>
+</head>
+<body>
+  <div id="wrap">
+    <!-- mobile-header -->
+    <header class="mobile-header">
+      <div class="mobile-header-wrap">
+        <h1 class="mb-logo">
+          <a href="index.html">
+            <svg viewBox="0 0 110.26 72.9" width="50">
+            <path d="M60.77,72.59c-12.83-2.18-8.84-13.26,.44-10.08,2.99,1,5.54,3.92,4.86,7.16,0-3.24-2.24-5.79-5.23-6.6-6.72-1.8-9.4,7.16,0,8.96,1.37,.25,2.62,.31,3.98,.25,10.09-.93,18.55-11.39,23.1-22.97,4.05-10.27,4.86-21.35,1.93-27.64-11.33,4.17-18.61,16.37-26.21,27.89-7.84,11.7-16.31,21.91-29.94,22.85-7.28,.44-15.13-1.49-20.17-7.1-3.24-3.67-4.42-8.28-3.92-12.7C-1.49,46.69-2.48,32.75,4.11,21.48,12.71,6.73,31.13-.12,47.51,0,53.55,0,60.21,.81,66.5,2.74c9.4,2.93,19.17,8.9,24.53,17.68,2.8-.69,5.92-.87,9.09-.5,3.55,.25,7.66,1.37,10.15,3.42-3.11-1.87-6.47-2.86-10.09-3.11-3.17-.19-6.04,.19-8.65,.93,10.09,18.8-4.67,51.42-26.65,51.73-1.31,0-2.68-.06-4.11-.31Zm-.56-25.4c7.91-11.33,16.56-23.03,29.2-26.46-4.23-8.22-14.57-14.69-23.22-17.31-6.6-1.99-13.14-2.55-18.49-2.43-14.82,.06-32.25,6.79-39.72,21.6-4.42,8.72-5.6,21.35,2.05,27.7,2.05-8.28,10.09-15.88,21.48-15.94,8.59-.12,17.18,4.3,18.18,13.45-1.43-8.34-10.08-12.89-18.18-12.39-10.46,.62-16.93,8.78-17.87,17.18l1.81,.75c8.34,2.68,18.49-.87,23.16-8.22-4.36,8.47-15.07,11.46-23.72,9.4-.44-.12-.93-.19-1.37-.37-.06,3.49,.81,6.85,2.61,9.77,3.61,5.6,10.77,8.65,17.31,7.66,12.58-1.87,21.85-17.43,26.77-24.4Z" fill="#40A8D3"/>
+          </svg>
+          </a>
+        </h1>
+        <button type="button" class="mb-menu-btn">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="5" x2="21" y2="5"></line>
+            <line x1="3" y1="19" x2="21" y2="19"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <!-- mobile-menu -->
+    <div class="mobile-menu-overlay">
+      <!-- mobile-menu-header -->
+      <div class="mobile-menu-header">
+        <h1 class="mb-logo">
+          <a href="index.html">
+            <svg viewBox="0 0 110.26 72.9" width="50">
+              <path d="M60.77,72.59c-12.83-2.18-8.84-13.26,.44-10.08,2.99,1,5.54,3.92,4.86,7.16,0-3.24-2.24-5.79-5.23-6.6-6.72-1.8-9.4,7.16,0,8.96,1.37,.25,2.62,.31,3.98,.25,10.09-.93,18.55-11.39,23.1-22.97,4.05-10.27,4.86-21.35,1.93-27.64-11.33,4.17-18.61,16.37-26.21,27.89-7.84,11.7-16.31,21.91-29.94,22.85-7.28,.44-15.13-1.49-20.17-7.1-3.24-3.67-4.42-8.28-3.92-12.7C-1.49,46.69-2.48,32.75,4.11,21.48,12.71,6.73,31.13-.12,47.51,0,53.55,0,60.21,.81,66.5,2.74c9.4,2.93,19.17,8.9,24.53,17.68,2.8-.69,5.92-.87,9.09-.5,3.55,.25,7.66,1.37,10.15,3.42-3.11-1.87-6.47-2.86-10.09-3.11-3.17-.19-6.04,.19-8.65,.93,10.09,18.8-4.67,51.42-26.65,51.73-1.31,0-2.68-.06-4.11-.31Zm-.56-25.4c7.91-11.33,16.56-23.03,29.2-26.46-4.23-8.22-14.57-14.69-23.22-17.31-6.6-1.99-13.14-2.55-18.49-2.43-14.82,.06-32.25,6.79-39.72,21.6-4.42,8.72-5.6,21.35,2.05,27.7,2.05-8.28,10.09-15.88,21.48-15.94,8.59-.12,17.18,4.3,18.18,13.45-1.43-8.34-10.08-12.89-18.18-12.39-10.46,.62-16.93,8.78-17.87,17.18l1.81,.75c8.34,2.68,18.49-.87,23.16-8.22-4.36,8.47-15.07,11.46-23.72,9.4-.44-.12-.93-.19-1.37-.37-.06,3.49,.81,6.85,2.61,9.77,3.61,5.6,10.77,8.65,17.31,7.66,12.58-1.87,21.85-17.43,26.77-24.4Z" fill="#40A8D3"/>
+            </svg>
+          </a>
+        </h1>
+        <button type="button" class="mb-close-btn">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <!-- mobile-menu-list -->
+      <nav class="mobile-menu-list">
+        <ul>
+          <li>
+            <a href="web-app-works.html">
+              <i class="icon-web-app"></i>
+              <span>Web/App</span>
+            </a>
+          </li>
+          <li>
+            <a href="design-works.html">
+              <i class="icon-design-works"></i>
+              <span>Design</span>
+            </a>
+          </li>
+          <li>
+            <a href="about.html">
+              <i class="icon-about active"></i>
+              <span>About</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- mmobile-menu-footer -->
+      <div class="mobile-menu-footer">
+        <div class="mobile-menu-contact-info">
+          <p>
+            이름 : 최다인<br>
+            전화번호 : 010 - 7936 - 3711<br>
+            이메일 : dain2090@naver.com
+          </p>
+        </div>
+        <div class="mobile-menu-contact">
+          <i class="mb-icon-contact"></i>
+          <span>Contact</span>
+          <i class="mb-arrow"></i>
+        </div>
+      </div>
+    </div>
+    <!-- header -->
+    <header class="header pc-only">
+      <div class="header-wrap">
+        <h1 class="logo">
+          <a href="index.html">
+            <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110.26 72.9"><g id="Layer_1-2"><path d="M60.77,72.59c-12.83-2.18-8.84-13.26,.44-10.08,2.99,1,5.54,3.92,4.86,7.16,0-3.24-2.24-5.79-5.23-6.6-6.72-1.8-9.4,7.16,0,8.96,1.37,.25,2.62,.31,3.98,.25,10.09-.93,18.55-11.39,23.1-22.97,4.05-10.27,4.86-21.35,1.93-27.64-11.33,4.17-18.61,16.37-26.21,27.89-7.84,11.7-16.31,21.91-29.94,22.85-7.28,.44-15.13-1.49-20.17-7.1-3.24-3.67-4.42-8.28-3.92-12.7C-1.49,46.69-2.48,32.75,4.11,21.48,12.71,6.73,31.13-.12,47.51,0,53.55,0,60.21,.81,66.5,2.74c9.4,2.93,19.17,8.9,24.53,17.68,2.8-.69,5.92-.87,9.09-.5,3.55,.25,7.66,1.37,10.15,3.42-3.11-1.87-6.47-2.86-10.09-3.11-3.17-.19-6.04,.19-8.65,.93,10.09,18.8-4.67,51.42-26.65,51.73-1.31,0-2.68-.06-4.11-.31Zm-.56-25.4c7.91-11.33,16.56-23.03,29.2-26.46-4.23-8.22-14.57-14.69-23.22-17.31-6.6-1.99-13.14-2.55-18.49-2.43-14.82,.06-32.25,6.79-39.72,21.6-4.42,8.72-5.6,21.35,2.05,27.7,2.05-8.28,10.09-15.88,21.48-15.94,8.59-.12,17.18,4.3,18.18,13.45-1.43-8.34-10.08-12.89-18.18-12.39-10.46,.62-16.93,8.78-17.87,17.18l1.81,.75c8.34,2.68,18.49-.87,23.16-8.22-4.36,8.47-15.07,11.46-23.72,9.4-.44-.12-.93-.19-1.37-.37-.06,3.49,.81,6.85,2.61,9.77,3.61,5.6,10.77,8.65,17.31,7.66,12.58-1.87,21.85-17.43,26.77-24.4Z"/></g></svg>
+          </a>
+        </h1>
+        <nav>
+          <ul>
+            <li>
+              <a href="web-app-works.html">
+                <i class="icon-web-app"></i>
+                <span>Web/App</span>
+              </a>
+            </li>
+            <li>
+              <a href="design-works.html">
+                <i class="icon-design-works"></i>
+                <span>Design</span>
+              </a>
+            </li>
+            <li>
+              <a href="about.html">
+                <i class="icon-about active"></i>
+                <span>About</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="contact-area">
+          <div class="contact-info">
+            <p>
+              이름 : 최다인<br>
+              전화번호 : 010-7936-3711<br>
+              이메일 : dain2090@naver.com
+            </p>
+          </div>
+          <div class="contact">
+            <i class="icon-contact"></i>
+            <span>Contact</span>
+            <i class="arrow"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- //header -->
+    <!-- section -->
+    <section class="content">
+      <div class="container">
+        <h2 class="page-title mb-only">About</h2>
+        <div class="content-module">
+          <div class="card profile-photo"></div>
+          <div class="card profile-info">
+            <div class="name-box">
+              <h2>최다인</h2>
+              <span>(Choi Dain)</span>
+            </div>
+            <ul class="info-list">
+              <li>1999. 11. 10.</li>
+              <li>010-7936-3711</li>
+              <li>dain2090@naver.com</li>
+              <li>대구 수성구 동대구로 59</li>
+            </ul>
+          </div>
+          <div class="card mind">
+            <h3>
+              <i class="icon-about"></i>
+              MIND
+            </h3>
+            <div class="mind-wrap">
+              <div class="item">
+                <strong> 단순히 예쁜 디자인은 NO</strong>
+                <P>
+                  '왜 이 요소가 필요한가?'라는 질문을 통해 사용자 중심의 기획을 실천합니다.
+                </P>
+              </div>
+              <div class="item">
+                <strong>고집보다는 소통</strong>
+                <P>
+                  협업을 통해 프로젝트의 퀄리티를 높이는 유연한 태도를 지향합니다.
+                </P> 
+              </div> 
+              <div class="item">
+                <strong>활용은 과감히, 이해는 필수</strong>
+                <P>
+                  AI를 통한 기술의 원리를 체득하여 더 나은 결과물을 만드는 도구로 활용합니다.
+                </P>
+              </div>
+            </div>
+          </div>
+          <div class="card education">
+            <h3>
+              <i class="icon-about"></i>
+              EDUCATION
+            </h3>
+            <ul>
+              <li>
+                <span class="date">2025. 09. ~ <br class="nowrap">
+                  2026. 01. 30.</span>
+                <span class="about-desc">
+                  대구 윤성컴퓨터디자인아카데미<br class="nowrap">
+                  AI 기반 UI/UX디자인(웹,앱) 모바일앱 AX 수료
+                </span>
+              </li>
+              <li>
+                <span class="date">2024. 02.</span>
+                <span class="about-desc">
+                  가천대학교 산업디자인과 졸업
+                </span>
+              </li>
+              <li>
+                <span class="date">2020. 03.</span>
+                <span class="about-desc">
+                  가천대학교 산업디자인과 입학
+                </span>
+              </li>
+              <li>
+                <span class="date">2018. 02.</span>
+                <span class="about-desc">
+                  경일여자고등학교 졸업
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div class="card deco"></div>
+          <div class="card license">
+            <h3>
+              <i class="icon-about"></i>
+              LICENSE
+            </h3>
+            <ul>
+              <li>
+                <span class="date">2026. 02.</span>
+                <span class="about-desc">웹디자인기능사</span>
+              </li>
+              <li>
+                <span class="date">2026. 09.</span>
+                <span class="about-desc">GTQ</span>
+              </li>
+            </ul>
+          </div>
+          <div class="card experience">
+            <h3>
+              <i class="icon-about"></i>
+              EXPERIENCE
+            </h3>
+            <ul>
+              <li>
+                <span class="date">2024. 04. ~<br class="nowrap"> 2025. 04.</span>
+                <span class="about-desc">가천대학교 ArTechne센터<br>(부서계약직)</span>
+              </li>
+            </ul>
+          </div>
+          <div class="card skills">
+            <h3>
+              <i class="icon-about"></i>
+              SKILLS
+            </h3>
+            <div class="progress-area">
+              <div id="html" class="progress">
+                <p>HTML</p>
+              </div>  
+              <div id="css" class="progress">
+                <p>CSS</p>
+              </div>  
+              <div id="js" class="progress">
+                <p>JS</p>
+              </div>
+              <div id="ps" class="progress">
+                <p>PHOTOSHOP</p>
+              </div>
+              <div id="ai" class="progress">
+                <p>ILLUSTRATOR</p>
+              </div>
+              <div id="figma" class="progress">
+                <p>FIGMA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- //section -->
+    <!-- footer -->
+    <footer class="footer pc-only">
+      <p>2026 PORTFOLIO</p>
+    </footer>
+    <!-- //footer -->
+  </div>
+</body>
+</html>
